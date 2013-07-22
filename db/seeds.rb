@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+Product.delete_all
+
+100.times do |n|
+  Product.create!(
+    name: "#{Faker::Lorem.word}".titleize,
+    description: Faker::Lorem.sentence(2),
+    price_in_cents: [100, 200, 500, 1000, 2500, 5000, 10000, 20000].sample,
+    on_sale: [true, false].sample
+  )
+end
