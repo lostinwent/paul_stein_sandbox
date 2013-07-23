@@ -1,40 +1,57 @@
-<h1>Listing products</h1>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Listing products</h1>
+  </div>
+</div>
 
 <hr />
 
-<%= will_paginate %>
+<div class="row">
+  <div class="lagre-12 columns">
+    <%= will_paginate %>
+  </div>
+</div>
 
 <hr />
 
+<div class="row">
+  <div class="lage-12 columns">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price in cents</th>
+        <th>On sale</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price in cents</th>
-    <th>On sale</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price_in_cents %></td>
-    <td><%= product.on_sale %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price_in_cents %></td>
+        <td><%= product.on_sale %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
 
 <hr />
-
-<%= will_paginate %>
-
+<div class="row">
+  <div class="large-12 columns">
+    <%= will_paginate %>
+  </div>
+</div>
 <hr />
 
+<div class="row">
+  <div class="large-12 columns">
 <%= link_to 'New Product', new_product_path %>
+  </div>
+</div>
